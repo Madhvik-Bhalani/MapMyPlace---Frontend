@@ -1,0 +1,48 @@
+.card img {
+    transition-property: transform;
+    transition-duration: 0.5s;
+    overflow: hidden;
+    height: 215px;
+}
+
+.card {
+    overflow: hidden;
+    transition-property: box-shadow, background-color, border-radius;
+    transition-duration: 0.5s;
+    box-shadow: 0.3px 0.3px 0.4rem rgba(35, 52, 53, 0.25);
+    height: 400px;
+    border-radius: 15px;
+}
+
+.card3 {
+    background-color: white;
+    border-radius: 15px;
+}
+
+.card1:hover,
+.card2:hover,
+.card3:hover,
+.card4:hover {
+    box-shadow: 0.4px 0.4px 1rem rgba(35, 52, 53, 0.25);
+}
+
+.card img:hover {
+    transform: scale(1.1);
+}
+
+
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .card {
+        width: calc(100% - 50px); /* Adjusted width to include spacing */
+        margin: 7px 25px; /* Add spacing on both sides */
+    }
+    .card-box{
+        width: 100%;
+        margin: 21px 0px 10px 0px!important;
+    }
+    .section-header{
+        margin-top: 7px;
+    }
+}

@@ -1,0 +1,138 @@
+.logoimg {
+    width: 68px;
+    height: 66px;
+}
+
+.btn {
+    font-size: 19px;
+}
+
+.signin {
+    font-weight: bold;
+    border: none;
+}
+
+.signin:hover {
+    color: #e99f27;
+}
+
+.signup:hover {
+    background-color: #540640;
+    color: white;
+}
+
+.signup {
+    background-color: #540640;
+    color: white;
+}
+
+
+
+.sign-icons {
+    display: none;
+}
+
+.fa-bars {
+    font-size: 25px;
+    margin: 0 5px 5px 0;
+    color: #540640;
+}
+
+.fa-bars:hover {
+    color: #e99f27;
+}
+
+.sidebox {
+    display: flex;
+    margin-right: 50px;
+}
+
+.sidebox li {
+    list-style: none;
+    font-size: 25px;
+    margin: 0px 12px;
+    padding: 3px;
+    color: #540640;
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+
+.sidebox li:hover,
+.sidebox .links:hover {
+    color: #e99f27;
+}
+
+.sidebox li:hover .nicons,
+.sidebox .links:hover i {
+    color: #e99f27;
+    transform: translateX(3px);
+}
+
+.sidebox .links {
+    color: #540640;
+    text-decoration: none;
+}
+
+.sidebox i {
+    color: #540640;
+    margin-right: 3px;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.logout,
+.cart {
+    cursor: pointer;
+}
+
+.sidebox .cart i {
+    transition: none !important;
+}
+
+.sidebox .cart i:hover {
+    color: #e99f27
+}
+
+
+/* Responsive design for mobile */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: #f8f9fa;
+
+    }
+
+    .logoimg {
+        width: 57px;
+        height: 57px;
+    }
+
+    .web-app-name {
+        margin-top: 15px !important;
+    }
+
+    .signin {
+
+        color: #540640 !important;
+        
+    }
+    .signin-text{
+        margin-left: 4px !important;
+    }
+    .signup {
+        background: none !important;
+        /* Match this to the color you want */
+        color: #540640 !important;
+        border: none !important;
+        font-weight: bold !important;
+        margin-right: -100px;
+    }
+
+    .sign-icons {
+        display: inline;
+        margin-right: 3px;
+    }
+    .web-app-name{
+        text-shadow: 0.3px 0.3px 0.3px #e99f27;
+    }
+
+}

@@ -1,0 +1,14 @@
+.footbox i {
+    font-size: 29px;
+    text-shadow: 0.3px 0.3px 0.3px black;
+}
+
+.footbox a {
+    border: none;
+    transition: transform 0.4s, text-shadow 0.4s;
+}
+
+.footbox a:hover i {
+    transform: scale(1.2);
+    text-shadow: 1px 1px 1px black;
+}
