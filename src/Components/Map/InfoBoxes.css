@@ -1,0 +1,56 @@
+.hover-blue:hover {
+    color: blue;
+}
+
+.hover-red:hover {
+    color: red;
+}
+
+.add-icon {
+    font-size: 24px;
+    color: #6c757d;
+    /* Bootstrap's default text-muted color */
+}
+.info-card {
+    height: auto;
+}
+
+.card-header .float-right {
+    float: right;
+}
+
+.info-title {
+    color: #540640;
+    font-weight: 500;
+}
+
+.info-icon {
+    font-size: 25px;
+
+
+}
+
+.icon-box {
+    margin-top: 5px;
+}
+
+.info-card-body p{
+    margin-bottom: 3px !important;
+}
+
+
+/* Responsive design for mobile */
+@media (max-width: 769px) {
+    .home-card {
+        margin-top: 27px;
+    }
+
+    .info-title {
+        font-size: 20px !important;
+    }
+    .info-card-boxes{
+        padding: 0 !important;
+    }
+   
+
+}

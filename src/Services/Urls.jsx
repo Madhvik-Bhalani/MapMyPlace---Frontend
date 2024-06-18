@@ -19,5 +19,35 @@ export const PasswordUrls = {
     resetPassword: () => {
         return baseUrl + `/password/reset-password`;
     },
+    changePassword: () => {
+        return baseUrl + `/password/change-password`;
+    },
 
+}
+
+export const UserUrls = {
+    getUserData: () => {
+        return baseUrl + `/users/fetch-user`;
+    },
+    editProfile: () => {
+        return baseUrl + `/users/edit-profile`;
+    },
+    deleteAccount: () => {
+        return baseUrl + `/users/delete-account`;
+    },
+    addFavFacility: () => {
+        return baseUrl + `/users/add-fav-facility`;
+    },
+    removeFavFacility: () => {
+        return baseUrl + `/users/remove-fav-facility`;
+    },
+    addHomeAddress: () => {
+        return baseUrl + `/users/add-home-address`;
+    }
+}
+
+export const MapUrls = {
+    fetchMapData: () => {
+        return baseUrl + `/map/fetch-map-data`;
+    },
 }

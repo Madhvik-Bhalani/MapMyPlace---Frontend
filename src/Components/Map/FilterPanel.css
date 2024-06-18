@@ -1,0 +1,43 @@
+.filter-panel {
+ height: 40%;  /* Adjust the height as needed */
+ margin: 20px 0px 5px 0px;
+}
+
+.filter-panel-header {
+  font-size: 23px;
+  color: #540640;
+}
+
+.custom-button {
+  color: white !important;
+  background-color: #540640 !important;
+  border: none;
+  /* display: block;
+  margin: auto;
+  width: 200px;
+  margin-top: 25px; */
+}
+
+.form-check {
+  margin-bottom: 10px;
+}
+
+.filter-checkbox,.filter-box-text{
+  font-size: 19px !important;
+  margin-right: 10px;
+}
+
+
+/* Responsive design for mobile */
+@media (max-width: 994px) {
+.form-check{
+  display: block !important;
+}
+}
+
+/* Responsive design for mobile */
+@media (max-width: 774px) {
+.filter-panel{
+  width: 100%;
+}
+}

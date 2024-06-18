@@ -4,26 +4,26 @@
 }
 
 .btn {
-    font-size: 19px;
+    font-size: 19px !important;
 }
 
 .signin {
-    font-weight: bold;
-    border: none;
+    font-weight: bold !important;
+    border: none !important;
 }
 
 .signin:hover {
-    color: #e99f27;
+    color: #e99f27 !important;
 }
 
 .signup:hover {
-    background-color: #540640;
-    color: white;
+    background-color: #540640 !important;
+    color: white !important;
 }
 
 .signup {
-    background-color: #540640;
-    color: white;
+    background-color: #540640 !important;
+    color: white !important;
 }
 
 
@@ -44,13 +44,13 @@
 
 .sidebox {
     display: flex;
-    margin-right: 50px;
+    margin-right: 15px;
 }
 
 .sidebox li {
     list-style: none;
     font-size: 25px;
-    margin: 0px 12px;
+    margin: 0px 7px;
     padding: 3px;
     color: #540640;
     transition-property: color;
@@ -65,7 +65,7 @@
 .sidebox li:hover .nicons,
 .sidebox .links:hover i {
     color: #e99f27;
-    transform: translateX(3px);
+    transform: translateX(1px);
 }
 
 .sidebox .links {
@@ -75,22 +75,13 @@
 
 .sidebox i {
     color: #540640;
-    margin-right: 3px;
+    margin-right: 5px;
     transition-duration: 0.3s;
     transition-property: transform;
 }
 
-.logout,
-.cart {
+.logout {
     cursor: pointer;
-}
-
-.sidebox .cart i {
-    transition: none !important;
-}
-
-.sidebox .cart i:hover {
-    color: #e99f27
 }
 
 
@@ -98,6 +89,8 @@
 @media (max-width: 991px) {
     .navbar-collapse {
         background-color: #f8f9fa;
+        z-index: 1;
+        
 
     }
 

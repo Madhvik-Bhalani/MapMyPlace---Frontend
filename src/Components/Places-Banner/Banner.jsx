@@ -7,7 +7,7 @@ import './Banner.css';
 
 function Banner() {
     return (
-        <div className='my-3  container-fluid' style={{padding: "7px 0px" }}>
+        <div className='my-3 banner-main-container container-fluid' style={{padding: "7px 0px" }}>
             <h1 className='text-center section-header'><span style={{ color: "#e99f27" }}>⨳Explore</span> <span style={{ color: "#540640" }}>Nearby Places⨳</span></h1>
             <div className="container card-box my-5">
                 <div className="row justify-content-around">

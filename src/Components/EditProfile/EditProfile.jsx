@@ -1,47 +1,44 @@
-import React, { useContext, useState, useRef } from 'react'
-import './Signup.css'
+import React, { useContext, useState, useRef, useEffect } from 'react'
+import './EditProfile.css'
 import logo from '../../Assets/logo.png'
 import refcontext from '../../Context/Refcontext'
-import { signup } from './Services/SignupServices.jsx';
+import { editProfile } from '../../Services/UserDataServices.jsx';
 import Notification from '../../Notification/Notification.jsx';
 import userDatacontext from '../../Context/UserDatacontext';
 
 
-function Signup() {
+function EditProfile() {
 
     const alert = new Notification();  // new instance for Notification class base component
     
+
     const usercon = useContext(userDatacontext);
+
+    const {data,setData}=usercon
     const refcon = useContext(refcontext)
 
     const refCloseModal = useRef(null)
     const submitBtnRef = useRef(null)
 
-    const [data, setdata] = useState({ fname: "", lname: "", email: "", pass: "", mno: "", cpass: "" })
-
     const subHandler = async (e) => {
         e.preventDefault();
 
-        const isRegistered = await signup(data);  //call api and pass user's data
+        const headers = {
+            'authorization': localStorage.getItem("token")
+        }
+        const isUpdated = await editProfile(data, headers);  //call api and pass user's data
 
-        if (isRegistered?.status) {
-            alert.notify(isRegistered?.status, isRegistered?.message);  //pass status and msg to notification
-            setdata({ fname: "", lname: "", email: "", pass: "", mno: "", cpass: "" })
+        if (isUpdated?.status) {
+            alert.notify(isUpdated?.status, isUpdated?.message);  //pass status and msg to notification
+            usercon.fetchUserData(headers)
             refCloseModal.current.click()
-            localStorage.setItem("token", isRegistered?.data) // set token to localstorage
-
-            const headers = {
-                'authorization': localStorage.getItem("token")
-            }
-            usercon.fetchUserData(headers)  //call api and pass token to fetch user data
-
         } else {
-            alert.notify(isRegistered?.status, isRegistered?.message);
+            alert.notify(isUpdated?.status, isUpdated?.message);
         }
     }
 
     const changeHandler = (e) => {
-        setdata({ ...data, [e.target.name]: e.target.value })
+        setData({ ...data, [e.target.name]: e.target.value })
     }
     const clickHandler = () => {
         submitBtnRef.current.click(); //trigger submit button
@@ -49,16 +46,16 @@ function Signup() {
 
     return (
         <>
-            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" style={{ display: "none" }} ref={refcon.refsignup}>
+            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop3" style={{ display: "none" }} ref={refcon.refeditprofile}>
             </button>
 
 
 
-            <div className="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div className="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="staticBackdropLabel" style={{color:"#540640"}}>Create Your Account With MapMyPlace</h5>
+                            <h5 className="modal-title" id="staticBackdropLabel" style={{ color: "#540640" }}>Update Your Information</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
@@ -78,7 +75,7 @@ function Signup() {
                                             minLength={3}
                                             maxLength={25}
                                             onChange={changeHandler}
-                                            value={data.firstName}
+                                            value={data.fname}
                                         />
                                     </div>
                                     <div className="col-md-6">
@@ -92,7 +89,7 @@ function Signup() {
                                             minLength={3}
                                             maxLength={25}
                                             onChange={changeHandler}
-                                            value={data.lastName}
+                                            value={data.lname}
                                         />
                                     </div>
                                 </div>
@@ -114,23 +111,11 @@ function Signup() {
                                 </div>
 
                                 <div className="mb-2">
-                                    <label htmlFor="exampleInputEmail2" className="form-label text-capitalize">Email address</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail2" name="email"
+                                    <label htmlFor="exampleInputEmail3" className="form-label text-capitalize">Email address</label>
+                                    <input type="email" className="form-control" id="exampleInputEmail3" name="email"
                                         aria-describedby="emailHelp" required onChange={changeHandler} value={data.email} />
                                 </div>
 
-                                <div className="mb-2">
-                                    <label htmlFor="exampleInputPassword2" className="form-label text-capitalize">Password</label>
-                                    <input type="password" className="form-control" id="pass" name="pass" required minLength={3} onChange={changeHandler} value={data.pass} />
-                                </div>
-                                <div className="mb-1">
-                                    <label htmlFor="exampleInputPassword3" className="form-label text-capitalize">Confirm Password</label>
-                                    <div>
-
-                                        <input type="password" className="form-control" id="cpass" name="cpass" required onChange={changeHandler} value={data.cpass} />
-
-                                    </div>
-                                </div>
                                 <input type="submit" value="Sign Up" style={{ display: "none" }} ref={submitBtnRef} />
                             </form>
                         </div>
@@ -144,7 +129,7 @@ function Signup() {
                             <button type="button" className="btn" style={{
                                 backgroundColor: "#540640",
                                 color: "white"
-                            }} onClick={clickHandler}>Sign Up</button>
+                            }} onClick={clickHandler}>Save Changes</button>
                         </div>
 
 
@@ -155,4 +140,4 @@ function Signup() {
     )
 }
 
-export default Signup
+export default EditProfile

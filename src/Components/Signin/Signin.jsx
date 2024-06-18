@@ -4,11 +4,15 @@ import logo from '../../Assets/logo.png'
 import './Signin.css'
 import { signin } from './Services/SigninServices.jsx';
 import Notification from '../../Notification/Notification.jsx';
-
-
+import reloadcontext from '../../Context/Reloadcontext';
+import userDatacontext from '../../Context/UserDatacontext';
 
 
 function Signin() {
+
+    const reloadcon = useContext(reloadcontext);
+    const usercon = useContext(userDatacontext);
+
 
     const alert = new Notification();  // new instance for Notification class base component
 
@@ -28,6 +32,14 @@ function Signin() {
             alert.notify(isLoggedin?.status, isLoggedin?.message);  //pass status and msg to notification
             setData({ email: "", pass: "" })
             refCloseModal.current.click()
+            localStorage.setItem("token", isLoggedin?.data) // set token to localstorage
+
+            const headers = {
+                'authorization': localStorage.getItem("token")
+            }
+            usercon.fetchUserData(headers)  //call api and pass token to fetch user data
+
+            reloadcon.setreload({}) //to re render component
         } else {
             alert.notify(isLoggedin?.status, isLoggedin?.message);
         }
@@ -56,7 +68,7 @@ function Signin() {
                 <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="staticBackdropLabel">Sign In To MapMyPlace</h5>
+                            <h5 className="modal-title" id="staticBackdropLabel" style={{color:"#540640"}}>Sign In To MapMyPlace</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">

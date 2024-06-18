@@ -1,0 +1,58 @@
+.custom-popup .popup-header h3 {
+    margin: 0;
+    font-size: 1.3em;
+}
+
+.location-name{
+    font-weight: bold;
+    color: #540640;
+}
+
+.custom-popup .favorite-btn {
+    background: none;
+    border: none;
+    color: #540640;
+    cursor: pointer;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.custom-popup .popup-body {
+    margin-top: 10px;
+}
+
+.custom-popup .popup-body p {
+    margin: 5px 0;
+    font-size: 14px;
+    
+}
+.custom-popup .popup-body p  strong{
+
+    font-size: 14px;
+    
+}
+
+
+.custom-popup .popup-body a {
+    color: #007bff;
+    text-decoration: none;
+    width: 100%;
+}
+
+.custom-popup .popup-body a:hover {
+    text-decoration: underline;
+}
+
+
+.favorite-icon {
+    font-size: 16px;
+    font-weight: 700;
+    color: #540640; 
+    cursor: pointer;
+  }
+  
+  .favorite-icon  .hovericon:hover{
+    color: #e74c3c !important;
+  }
+  

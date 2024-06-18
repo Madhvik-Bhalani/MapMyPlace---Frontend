@@ -50,7 +50,7 @@ function ForgotPassword() {
                 <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="staticBackdropLabel">Forgot Password</h5>
+                            <h5 className="modal-title" id="staticBackdropLabel" style={{color:"#540640"}}>Forgot Password</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
