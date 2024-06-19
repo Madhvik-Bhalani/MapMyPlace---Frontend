@@ -100,9 +100,9 @@ const InfoBoxes = ({ favFacilityData, updateFavState, homeAddressData }) => {
                             localStorage.getItem("isAddress") ?
                                 <div className='card-body info-card-body'>
 
-                                    {homeAddressData.y && <p><strong>lattitude:</strong> {homeAddressData.y}</p>}
-                                    {homeAddressData.x && <p><strong>longitude:</strong> {homeAddressData.x}</p>}
-                                    {homeAddressData.label && <p><strong>Address:</strong> {homeAddressData.label}</p>}
+                                    {homeAddressData.y && <p style={{fontSize:"16px"}}><strong>lattitude:</strong> {homeAddressData.y}</p>}
+                                    {homeAddressData.x && <p className='mt-2' style={{fontSize:"16px"}}><strong>longitude:</strong> {homeAddressData.x}</p>}
+                                    {homeAddressData.label && <p className='mt-2'  style={{fontSize:"16px"}}><strong>Address:</strong> {homeAddressData.label}</p>}
                                 </div> :
 
 

@@ -101,12 +101,14 @@ const FilterPanel = () => {
 
 
 
-  useEffect(() => {
-    fetchDataOnLoad()
-    fetchFavFacility() //about fav facility
-    checkHomeAddress() //about home address
-
-  }, [])
+ useEffect(() => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    fetchDataOnLoad();
+    fetchFavFacility(); //about fav facility
+    checkHomeAddress(); //about home address
+  }
+}, []);
 
   // Callback function to update favFacilityData after adding or removing from favorites
   const updateFavState = () => {
@@ -128,9 +130,10 @@ const FilterPanel = () => {
 
 
 
-              <div className="form-check col-12 col-md-6 col-lg-3 d-flex justify-content-center">
+            <div className="form-check col-12 col-md-6 col-lg-3 d-flex justify-content-center">
                 <input
-                  className="form-check-input filter-checkbox"
+                  id="socialChildProjects"
+                  className="form-check-input filter-checkbox custom-checkbox childcheck"
                   type="checkbox"
                   name="socialChildProjects"
                   checked={filters.socialChildProjects}
@@ -143,8 +146,9 @@ const FilterPanel = () => {
 
               <div className="form-check col-12 col-md-6 col-lg-3 d-flex justify-content-center">
                 <input
-                  className="form-check-input filter-checkbox"
+                  className="form-check-input filter-checkbox custom-checkbox teenagercheck"
                   type="checkbox"
+                  id="socialTeenagerProjects"
                   name="socialTeenagerProjects"
                   checked={filters.socialTeenagerProjects}
                   onChange={handleChange}
@@ -158,9 +162,10 @@ const FilterPanel = () => {
 
               <div className="form-check col-12 col-md-6 col-lg-3 d-flex justify-content-center">
                 <input
-                  className="form-check-input filter-checkbox"
+                  className="form-check-input filter-checkbox kindercheck"
                   type="checkbox"
                   name="kinderGardens"
+                  id="kinderGardens"
                   checked={filters.kinderGardens}
                   onChange={handleChange}
                 />
@@ -171,9 +176,10 @@ const FilterPanel = () => {
 
               <div className="form-check col-12 col-md-6 col-lg-3 d-flex justify-content-center" >
                 <input
-                  className="form-check-input filter-checkbox"
+                  className="form-check-input filter-checkbox schoolcheck"
                   type="checkbox"
                   name="schools"
+                  id="schools"
                   checked={filters.schools}
                   onChange={handleChange}
                 />

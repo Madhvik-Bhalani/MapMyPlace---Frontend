@@ -1,3 +1,5 @@
+import React, { useEffect } from "react";
+
 import {
   BrowserRouter,
   Routes,
@@ -14,10 +16,12 @@ import ChangePass from './Components/ChangePass/ChangePass';
 import EditProfile from './Components/EditProfile/EditProfile';
 import FilterPanel from "./Components/Map/FilterPanel";
 import HomeAddress from "./Components/Map/HomeAddress";
-
+import ProtectedRoute from './ProtectedRoute';
 
 
 function App() {
+
+
   return (
     <>
       <BrowserRouter>
@@ -28,8 +32,8 @@ function App() {
         <HomeAddress />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
-          <Route path="/map" element={<FilterPanel />} />
+          <Route path="/reset-password" element={<ProtectedRoute element={<ResetPassword />} />} />
+          <Route path="/map" element={<ProtectedRoute element={<FilterPanel />} />} />
         </Routes>
 
         <ToastContainer limit={3} />

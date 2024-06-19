@@ -13,6 +13,7 @@ function Contextprovider(props) {
     const refchangepass = useRef(null)
     const refeditprofile = useRef(null)
     const refhomeaddress = useRef(null)
+    const refhomeaddressclose = useRef(null)
 
 
     const [reload, setreload] = useState({})
@@ -62,7 +63,7 @@ function Contextprovider(props) {
     return (
         <Refcontext.Provider value={{ refsignin, refsignup, refforgotpass, refresetpass, refchangepass, refeditprofile, refhomeaddress }}>
             <Reloadcontext.Provider value={{ reload, setreload }}>
-                <UserDatacontext.Provider value={{ fetchUserData, data, setData, setDataOnEditProfile, favFacilityState, homeAddressState }}>
+                <UserDatacontext.Provider value={{ fetchUserData, data, setData, setDataOnEditProfile, favFacilityState, homeAddressState,refhomeaddressclose }}>
                     {props.children}
                 </UserDatacontext.Provider>
             </Reloadcontext.Provider>

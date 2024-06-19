@@ -52,7 +52,7 @@ function EditProfile() {
 
 
             <div className="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div className="modal-dialog">
+                <div className="modal-dialog ">
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title" id="staticBackdropLabel" style={{ color: "#540640" }}>Update Your Information</h5>

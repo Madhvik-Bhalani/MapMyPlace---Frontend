@@ -12,7 +12,8 @@
     /* Bootstrap's default text-muted color */
 }
 .info-card {
-    height: auto;
+    height: 250px;
+    overflow-y: scroll;
 }
 
 .card-header .float-right {

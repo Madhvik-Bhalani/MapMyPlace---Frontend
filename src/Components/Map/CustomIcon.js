@@ -4,7 +4,7 @@ import favFacilityImg from '../../Assets/fav-facility-1.png'
 import homeImg from '../../Assets/home-icon.png'
 
 
-// for Font awesome icons
+// for Font awesome icons-1
 const createFontAwesomeMarker = (iconClass, color) => {
     return L.divIcon({
 
@@ -29,10 +29,10 @@ const createImageMarker = (imageUrl) => {
 
 
 
-const schoolIcon = createFontAwesomeMarker('fa-solid fa-location-dot', 'blue',);
-const teenagerProjectIcon = createFontAwesomeMarker('fa-solid fa-location-dot', 'red');
-const kindergardenIcon = createFontAwesomeMarker('fa-solid fa-location-dot', 'green');
-const childProjectIcon = createFontAwesomeMarker('fa-solid fa-location-dot', 'purple');
+const schoolIcon = createFontAwesomeMarker('fa-solid fa-location-dot', "#0f86c8");
+const teenagerProjectIcon = createFontAwesomeMarker('fa-solid fa-location-dot', 'rgb(216 27 96)'); //red
+const kindergardenIcon = createFontAwesomeMarker('fa-solid fa-location-dot', 'rgb(46 125 50)'); //green
+const childProjectIcon = createFontAwesomeMarker('fa-solid fa-location-dot', 'rgb(156 39 176)'); //purple 
 // const favFacilityIcon = createFontAwesomeMarker('fa-solid fa-location-pin-lock', '#e99f27');
 const favFacilityIcon = createImageMarker(favFacilityImg);
 const homeIcon = createImageMarker(homeImg);

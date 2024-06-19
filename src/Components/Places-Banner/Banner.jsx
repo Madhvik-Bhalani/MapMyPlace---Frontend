@@ -4,12 +4,20 @@ import img2 from '../../Assets/y_kinder.png';
 import img3 from '../../Assets/y_social_child.png';
 import img4 from '../../Assets/y_youth.png';
 import './Banner.css';
+import {useNavigate} from 'react-router-dom'
 
 function Banner() {
+
+    const navigate = useNavigate()
+
+    const cardClickHandler=()=>{
+        navigate("/map")
+    }
+
     return (
-        <div className='my-3 banner-main-container container-fluid' style={{padding: "7px 0px" }}>
+        <div className='my-3 banner-main-container container-fluid' style={{ padding: "7px 0px" }}>
             <h1 className='text-center section-header'><span style={{ color: "#e99f27" }}>⨳Explore</span> <span style={{ color: "#540640" }}>Nearby Places⨳</span></h1>
-            <div className="container card-box my-5">
+            <div className="container card-box my-5" onClick={cardClickHandler}>
                 <div className="row justify-content-around">
                     <div className="col-lg-3 col-md-6 mb-4">
                         <div className="card card1" style={{ border: "none" }}>
@@ -20,7 +28,7 @@ function Banner() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-3 col-md-6 mb-4">
+                    <div className="col-lg-3 col-md-6 mb-4" onClick={cardClickHandler}>
                         <div className="card card2" style={{ border: "none" }}>
                             <img src={img2} className="card-img-top" alt="Kindergardens" />
                             <div className="card-body">
@@ -29,7 +37,7 @@ function Banner() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-3 col-md-6 mb-4">
+                    <div className="col-lg-3 col-md-6 mb-4" onClick={cardClickHandler}>
                         <div className="card card3" style={{ border: "none" }}>
                             <img src={img3} className="card-img-top" alt="Social Child Projects" />
                             <div className="card-body">
@@ -38,7 +46,7 @@ function Banner() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-3 col-md-6 mb-4">
+                    <div className="col-lg-3 col-md-6 mb-4" onClick={cardClickHandler}>
                         <div className="card card4" style={{ border: "none" }}>
                             <img src={img4} className="card-img-top" alt="Social Teenager Projects" />
                             <div className="card-body">
