@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import {
   BrowserRouter,
@@ -17,6 +17,7 @@ import EditProfile from './Components/EditProfile/EditProfile';
 import FilterPanel from "./Components/Map/FilterPanel";
 import HomeAddress from "./Components/Map/HomeAddress";
 import ProtectedRoute from './ProtectedRoute';
+
 
 
 function App() {

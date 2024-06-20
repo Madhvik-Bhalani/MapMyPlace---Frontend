@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef, useEffect } from 'react'
+import React, { useContext, useRef } from 'react'
 import './EditProfile.css'
 import logo from '../../Assets/logo.png'
 import refcontext from '../../Context/Refcontext'
@@ -10,11 +10,11 @@ import userDatacontext from '../../Context/UserDatacontext';
 function EditProfile() {
 
     const alert = new Notification();  // new instance for Notification class base component
-    
+
 
     const usercon = useContext(userDatacontext);
 
-    const {data,setData}=usercon
+    const { data, setData } = usercon
     const refcon = useContext(refcontext)
 
     const refCloseModal = useRef(null)
@@ -49,8 +49,6 @@ function EditProfile() {
             <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop3" style={{ display: "none" }} ref={refcon.refeditprofile}>
             </button>
 
-
-
             <div className="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div className="modal-dialog ">
                     <div className="modal-content">
@@ -65,11 +63,11 @@ function EditProfile() {
 
                                 <div className="row mb-2 mt-3">
                                     <div className="col-md-6">
-                                        <label htmlFor="fname" className="form-label text-capitalize">First Name</label>
+                                        <label htmlFor="fname1" className="form-label text-capitalize">First Name</label>
                                         <input
                                             type="text"
                                             className="form-control"
-                                            id="fname"
+                                            id="fname1"
                                             name="fname"
                                             required
                                             minLength={3}
@@ -79,11 +77,11 @@ function EditProfile() {
                                         />
                                     </div>
                                     <div className="col-md-6">
-                                        <label htmlFor="lname" className="form-label text-capitalize">Last Name</label>
+                                        <label htmlFor="lname1" className="form-label text-capitalize">Last Name</label>
                                         <input
                                             type="text"
                                             className="form-control"
-                                            id="lname"
+                                            id="lname1"
                                             name="lname"
                                             required
                                             minLength={3}
@@ -94,13 +92,13 @@ function EditProfile() {
                                     </div>
                                 </div>
                                 <div className="mb-2">
-                                    <label htmlFor="mno" className="form-label text-capitalize">Mobile Number</label>
+                                    <label htmlFor="mno1" className="form-label text-capitalize">Mobile Number</label>
                                     <div className="input-group">
                                         <span className="input-group-text">+49</span>
                                         <input
                                             type="tel"
                                             className="form-control"
-                                            id="mno"
+                                            id="mno1"
                                             name="mno"
                                             required
                                             onChange={changeHandler}
@@ -111,8 +109,8 @@ function EditProfile() {
                                 </div>
 
                                 <div className="mb-2">
-                                    <label htmlFor="exampleInputEmail3" className="form-label text-capitalize">Email address</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail3" name="email"
+                                    <label htmlFor="exampleInputEmail4" className="form-label text-capitalize">Email address</label>
+                                    <input type="email" className="form-control" id="exampleInputEmail4" name="email"
                                         aria-describedby="emailHelp" required onChange={changeHandler} value={data.email} />
                                 </div>
 

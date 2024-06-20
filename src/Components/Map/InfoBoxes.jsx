@@ -20,20 +20,27 @@ const InfoBoxes = ({ favFacilityData, updateFavState, homeAddressData }) => {
 
     const removeFavFacilityHandler = async (e) => {
         e.preventDefault();
-        const headers = {
-            "authorization": localStorage.getItem("token")
-        }
 
-        const isRemoved = await removeFavFacility(headers)
-        if (isRemoved?.status) {
-            alert.notify(isRemoved?.status, isRemoved?.message);
-
-            updateFavState() //reload and fetch fav facility data again to update mark and remove as fav
-
+        if (!favFacilityData.data_obj) {
+            alert.notify(false, "No favorite facilities available in your account")
         } else {
-            alert.notify(isRemoved?.status, isRemoved?.message);
+            const headers = {
+                "authorization": localStorage.getItem("token")
+            }
 
+            const isRemoved = await removeFavFacility(headers)
+            if (isRemoved?.status) {
+                alert.notify(isRemoved?.status, isRemoved?.message);
+
+                updateFavState() //reload and fetch fav facility data again to update mark and remove as fav
+
+            } else {
+                alert.notify(isRemoved?.status, isRemoved?.message);
+
+            }
         }
+
+
     }
 
     const editHomeAddressHandler = () => {
@@ -100,9 +107,9 @@ const InfoBoxes = ({ favFacilityData, updateFavState, homeAddressData }) => {
                             localStorage.getItem("isAddress") ?
                                 <div className='card-body info-card-body'>
 
-                                    {homeAddressData.y && <p style={{fontSize:"16px"}}><strong>lattitude:</strong> {homeAddressData.y}</p>}
-                                    {homeAddressData.x && <p className='mt-2' style={{fontSize:"16px"}}><strong>longitude:</strong> {homeAddressData.x}</p>}
-                                    {homeAddressData.label && <p className='mt-2'  style={{fontSize:"16px"}}><strong>Address:</strong> {homeAddressData.label}</p>}
+                                    {homeAddressData.y && <p style={{ fontSize: "16px" }}><strong>lattitude:</strong> {homeAddressData.y}</p>}
+                                    {homeAddressData.x && <p className='mt-2' style={{ fontSize: "16px" }}><strong>longitude:</strong> {homeAddressData.x}</p>}
+                                    {homeAddressData.label && <p className='mt-2' style={{ fontSize: "16px" }}><strong>Address:</strong> {homeAddressData.label}</p>}
                                 </div> :
 
 

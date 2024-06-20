@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useRef } from 'react';
-import { Marker, Popup, CircleMarker } from 'react-leaflet';
+import React, { useRef } from 'react';
+import { Marker, Popup } from 'react-leaflet';
 import './MarkerComponent.css';
 import { addFavFacility, removeFavFacility } from '../../Services/UserDataServices.jsx';
 import Notification from '../../Notification/Notification.jsx';

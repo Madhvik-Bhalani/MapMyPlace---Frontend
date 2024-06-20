@@ -50,8 +50,8 @@
 /* Responsive design for mobile */
 @media (max-width: 768px) {
     .card {
-        width: calc(100% - 50px); /* Adjusted width to include spacing */
-        margin: 7px 25px; /* Add spacing on both sides */
+        width: calc(100% - 50px); 
+        margin: 7px 25px; 
     }
     .card-box{
         width: 100%;

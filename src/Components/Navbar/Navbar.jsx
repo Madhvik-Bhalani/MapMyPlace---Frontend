@@ -9,6 +9,7 @@ import SweetAlert from '../../Alert/SweetAlert.jsx';
 import { deleteAccount } from '../../Services/UserDataServices.jsx'
 import Notification from '../../Notification/Notification.jsx';
 
+
 function Navbar() {
     const refcon = useContext(refcontext);
     const reloadcon = useContext(reloadcontext);

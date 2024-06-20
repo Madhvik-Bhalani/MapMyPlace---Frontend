@@ -25,7 +25,7 @@ function ForgotPassword() {
 
         if (isLinkSent?.status) {
           alert.notify(isLinkSent?.status, isLinkSent?.message);  //pass status and msg to notification
-          setData({email:""}) //empty email field
+          setData({email:""}) 
           refCloseModal.current.click()
         } else {
           alert.notify(isLinkSent?.status, isLinkSent?.message);
@@ -58,8 +58,8 @@ function ForgotPassword() {
                                 <img src={logo} alt="MapMyPlace" style={{ width: "100px", height: "95px", display: "block", margin: "auto" }} />
                                 <div className="mb-3 mt-4">
 
-                                    <label htmlFor="exampleInputEmail1" className="form-label text-capitalize">Email address</label>
-                                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" required onChange={changeHandler} value={data.email} />
+                                    <label htmlFor="exampleInputEmail5" className="form-label text-capitalize">Email address</label>
+                                    <input type="email" className="form-control" id="exampleInputEmail5" aria-describedby="emailHelp" name="email" required onChange={changeHandler} value={data.email} />
 
                                 </div>
                                 

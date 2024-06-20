@@ -32,7 +32,7 @@ function Signin() {
             alert.notify(isLoggedin?.status, isLoggedin?.message);  //pass status and msg to notification
             setData({ email: "", pass: "" })
             refCloseModal.current.click()
-            localStorage.setItem("token", isLoggedin?.data) // set token to localstorage
+            localStorage.setItem("token", isLoggedin?.data) 
 
             const headers = {
                 'authorization': localStorage.getItem("token")

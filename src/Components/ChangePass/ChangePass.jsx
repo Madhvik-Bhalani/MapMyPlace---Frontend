@@ -47,19 +47,19 @@ function ChangePass() {
                         <div className="mb-3">
 
                             <label htmlFor="opass" className="form-label text-capitalize">Old Password</label>
-                            <input type="text" className="form-control" id="opass" aria-describedby="emailHelp" name="opass" required onChange={changeHandler} value={pass.opass}/>
+                            <input type="text" className="form-control" id="opass" aria-describedby="emailHelp" name="opass" required onChange={changeHandler} value={pass.opass} />
 
                         </div>
                         <div className="mb-3">
                             <label htmlFor="npass" className="form-label text-capitalize">New Password</label>
-                            <input type="password" className="form-control" id="npass" name="npass" required onChange={changeHandler} value={pass.npass}/>
+                            <input type="password" className="form-control" id="npass" name="npass" required onChange={changeHandler} value={pass.npass} />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="rpass" className="form-label text-capitalize">Re-Type Password</label>
                             <div>
 
 
-                                <input type="password" className="form-control" id="rpass" name="rpass" required onChange={changeHandler} value={pass.rpass}/>
+                                <input type="password" className="form-control" id="rpass" name="rpass" required onChange={changeHandler} value={pass.rpass} />
 
                             </div>
                         </div>

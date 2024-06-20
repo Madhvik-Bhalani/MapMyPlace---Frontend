@@ -87,7 +87,6 @@ const FilterPanel = () => {
 
   const checkHomeAddress = () => {
 
-
     // if (Object.keys(usercon.homeAddressState).length === 0) {
     //   console.log("");
     //   refcon.refhomeaddress.current.click()
@@ -100,15 +99,14 @@ const FilterPanel = () => {
   }
 
 
-
- useEffect(() => {
-  const token = localStorage.getItem("token");
-  if (token) {
-    fetchDataOnLoad();
-    fetchFavFacility(); //about fav facility
-    checkHomeAddress(); //about home address
-  }
-}, []);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      fetchDataOnLoad();
+      fetchFavFacility(); //about fav facility
+      checkHomeAddress(); //about home address
+    }
+  }, []);
 
   // Callback function to update favFacilityData after adding or removing from favorites
   const updateFavState = () => {
@@ -130,7 +128,7 @@ const FilterPanel = () => {
 
 
 
-            <div className="form-check col-12 col-md-6 col-lg-3 d-flex justify-content-center">
+              <div className="form-check col-12 col-md-6 col-lg-3 d-flex justify-content-center">
                 <input
                   id="socialChildProjects"
                   className="form-check-input filter-checkbox custom-checkbox childcheck"

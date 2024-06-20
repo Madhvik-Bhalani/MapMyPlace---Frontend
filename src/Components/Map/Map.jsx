@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import YourLocationMarker from './YourLocationMarker';
 import MarkerComponent from './MarkerComponent.jsx';
@@ -25,7 +25,7 @@ function Map({ schools, socialTeenagerProjects, kinderGardens, socialChildProjec
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {/* <YourLocationMarker /> */}
+        <YourLocationMarker />
 
 
         {/* home marker */}
@@ -33,10 +33,9 @@ function Map({ schools, socialTeenagerProjects, kinderGardens, socialChildProjec
 
 
         {/* location (facility) marker */}
-
         {schools && <MarkerComponent data={schools} icon={schoolIcon} favFacilityData={favFacilityData} favIcon={favFacilityIcon} updateFavState={updateFavState} homeAddressData={homeAddressData} />}
         {kinderGardens && <MarkerComponent data={kinderGardens} icon={kindergardenIcon} favFacilityData={favFacilityData} favIcon={favFacilityIcon} updateFavState={updateFavState} homeAddressData={homeAddressData} />}
-        {socialTeenagerProjects && <MarkerComponent data={socialTeenagerProjects} icon={teenagerProjectIcon} favFacilityData={favFacilityData} favIcon={favFacilityIcon} updateFavState={updateFavState} homeAddressData={homeAddressData}  />}
+        {socialTeenagerProjects && <MarkerComponent data={socialTeenagerProjects} icon={teenagerProjectIcon} favFacilityData={favFacilityData} favIcon={favFacilityIcon} updateFavState={updateFavState} homeAddressData={homeAddressData} />}
         {socialChildProjects && <MarkerComponent data={socialChildProjects} icon={childProjectIcon} favFacilityData={favFacilityData} favIcon={favFacilityIcon} updateFavState={updateFavState} homeAddressData={homeAddressData} />}
       </MapContainer>
     </div>

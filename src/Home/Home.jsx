@@ -7,9 +7,6 @@ import ForgotPassword from '../Components/ForgotPassword/ForgotPassword';
 import reloadcontext from '../Context/Reloadcontext';
 
 
-
-// import reloadcontext from '../Context/Reloadcontext'
-
 function Home() {
     const reloadcon = useContext(reloadcontext)
     // eslint-disable-next-line 

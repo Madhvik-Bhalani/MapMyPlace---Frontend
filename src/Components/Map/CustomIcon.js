@@ -1,10 +1,9 @@
-// customIcons.js
 import L from 'leaflet';
 import favFacilityImg from '../../Assets/fav-facility-1.png'
 import homeImg from '../../Assets/home-icon.png'
 
 
-// for Font awesome icons-1
+// for Font awesome icons
 const createFontAwesomeMarker = (iconClass, color) => {
     return L.divIcon({
 
