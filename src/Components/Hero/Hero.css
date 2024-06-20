@@ -34,8 +34,6 @@
 }
 
 .para {
-    /* display: flex; */
-    /* justify-content: center; */
     margin-top: 7px;
 }
 
@@ -65,40 +63,32 @@
         flex-direction: column;
         /* Change to column layout for mobile */
         height: auto;
-        /* Adjust height automatically */
         margin: 55px 0px;
     }
 
     .left,
     .right {
         width: 100%;
-        /* Full width for both left and right sections */
     }
 
     .right img {
-        /* height: 280px; Allow image to resize based on width */
-        /* width: 100%; Allow image to resize based on width */
         display: none;
 
     }
 
     .left {
         order: 2;
-        /* Move left section below right section */
         margin-top: 10px;
         padding: 0px 15px;
     }
 
     .right {
         order: 1;
-        /* Move right section above left section */
     }
 
     .para {
         width: 100%;
-        /* Adjust text width for better readability */
         margin-top: 10px;
-        /* Center text horizontally */
     }
 
     .para p {
