@@ -20,7 +20,7 @@ function Map({ schools, socialTeenagerProjects, kinderGardens, socialChildProjec
 
   return (
     <div className="p-4">
-      <MapContainer center={initialPosition} zoom={13} scrollWheelZoom={false} style={{ borderRadius: "7px" }} whenCreated={map => (mapRef.current = map)}>
+      <MapContainer center={initialPosition} zoom={13} scrollWheelZoom={true} style={{ borderRadius: "7px" }} whenCreated={map => (mapRef.current = map)}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
