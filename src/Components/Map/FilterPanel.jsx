@@ -102,7 +102,7 @@ const FilterPanel = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      fetchDataOnLoad();
+      fetchDataOnLoad(); //about map data
       fetchFavFacility(); //about fav facility
       checkHomeAddress(); //about home address
     }

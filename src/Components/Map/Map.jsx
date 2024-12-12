@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import YourLocationMarker from './YourLocationMarker';
 import MarkerComponent from './MarkerComponent.jsx';
@@ -8,19 +8,20 @@ import HomeMarkerComponent from './HomeMarkerComponent.jsx';
 
 function Map({ schools, socialTeenagerProjects, kinderGardens, socialChildProjects, favFacilityData, updateFavState, homeAddressData }) {
 
-  const mapRef = useRef(null)
+  // const mapRef = useRef(null)
 
-  useEffect(() => {
-    if (mapRef.current) {
-      mapRef.current.invalidateSize();
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (mapRef.current) {
+  //     mapRef.current.invalidateSize();
+  //   }
+  // }, []);
 
   var initialPosition = { lat: 50.833332, lng: 12.916667 }; // Initial center of the map Chemnitz
 
   return (
-    <div className="p-4">
-      <MapContainer center={initialPosition} zoom={13} scrollWheelZoom={true} style={{ borderRadius: "7px" }} whenCreated={map => (mapRef.current = map)}>
+    <div className="p-4"> 
+      <MapContainer center={initialPosition} zoom={13} scrollWheelZoom={false} style={{ borderRadius: "7px" }} > 
+      {/* whenCreated={map => (mapRef.current = map)} */}
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
